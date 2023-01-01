@@ -22,7 +22,7 @@ pod 'AlipaySDK-in-xcframework'
 
 ## Author
 
-16892216, yorkzero8312@gmail.com
+York Yu, yorkzero8312@gmail.com
 
 ## License
 

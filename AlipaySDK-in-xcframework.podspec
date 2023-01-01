@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AlipaySDK-in-xcframework'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of AlipaySDK-in-xcframework.'
+  s.version          = '5.8.11'
+  s.summary          = 'A xcframework based AlipaySDK Support M1 simulator'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,19 +18,31 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  This pod is built for alipay-standard
+  Please see https://github.com/yorkzero831/AlipaySDK-in-xcframework
                        DESC
 
-  s.homepage         = 'https://github.com/16892216/AlipaySDK-in-xcframework'
+  s.homepage         = 'https://github.com/yorkzero831/AlipaySDK-in-xcframework'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { '16892216' => 'yorkzero8312@gmail.com' }
-  s.source           = { :git => 'https://github.com/16892216/AlipaySDK-in-xcframework.git', :tag => s.version.to_s }
+  s.author           = { 'yorkzero8312' => 'yorkzero8312@gmail.com' }
+  s.source           = { :http => 'https://github.com/yorkzero831/AlipaySDK-in-xcframework/releases/download/v15.8.11/alipay-standard.zip' }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  platform = :ios
+  
 
-  s.source_files = 'AlipaySDK-in-xcframework/Classes/**/*'
+  s.ios.deployment_target = '14.0'
+
+  # s.source_files = 'AlipaySDK-in-xcframework/Classes/**/*'
+
+  s.vendored_frameworks = 'output/alipay-standard/AlipaySDK.xcframework'
+  s.resource = 'output/alipay-standard/AlipaySDK.bundle'
+
+  s.frameworks = 'UIKit', 'Foundation', 'CFNetwork', 'SystemConfiguration', 'QuartzCore', 'CoreGraphics', 'CoreMotion', 'CoreTelephony', 'CoreText', 'WebKit'
+  s.libraries = 'c++', 'z'
+  
+   
   
   # s.resource_bundles = {
   #   'AlipaySDK-in-xcframework' => ['AlipaySDK-in-xcframework/Assets/*.png']
